@@ -1,5 +1,27 @@
 # 2. Webserver
 
+![image](https://hackmd.io/_uploads/HkTejSXuC.png)
+
+![image](https://hackmd.io/_uploads/HJrMoBmdR.png)
+
+![image](https://hackmd.io/_uploads/Sy5chS7_C.png)
+
+![image](https://hackmd.io/_uploads/SkBpnBmOA.png)
+
+![image](https://hackmd.io/_uploads/SyBepHmd0.png)
+
+- trên 1 webserver có thể cấu hình được nhiều site
+
+![image](https://hackmd.io/_uploads/BknNjBmdC.png)
+
+- webserver có thể rewrite url
+
+![image](https://hackmd.io/_uploads/SkCIorQOC.png)
+
+![image](https://hackmd.io/_uploads/SyKdsrQOR.png)
+
+![image](https://hackmd.io/_uploads/rkKYjBmu0.png)
+
 ## cài đặt ứng dụng web wordpress
 
 ![image](https://hackmd.io/_uploads/SyVAFzzuR.png)
