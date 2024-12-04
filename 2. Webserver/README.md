@@ -22,6 +22,146 @@
 
 ![image](https://hackmd.io/_uploads/rkKYjBmu0.png)
 
+- Khi một máy tính muốn truy cập một trang web hoặc một tệp tin từ một máy chủ, nó gửi yêu cầu tới địa chỉ IP của máy chủ đó thông qua giao thức HTTP. Webserver sau đó nhận yêu cầu này, xử lý và tìm kiếm các tệp tin hoặc trang web tương ứng và trả về kết quả cho máy tính yêu cầu thông qua một trang web hoặc các tệp tin được truyền về qua mạng.
+
+## Vai trò của Web Server
+
+### 2.1 Xử lý yêu cầu từ client
+
+- Tài nguyên tĩnh: (HTML, CSS, JavaScript, hình ảnh).
+- Tài nguyên động: Chuyển tiếp yêu cầu đến backend hoặc Application
+  Server để xử lý.
+
+### 2.2 Cung cấp nội dung tĩnh
+
+Trả về các tệp tĩnh như:
+o HTML: Hiển thị giao diện người dùng.
+o CSS: Định dạng giao diện.
+o JavaScript: Xử lý logic phía client
+
+- Điều này giúp giảm tải cho các thành phần backend, vì Web Server xử lý các
+  yêu cầu cơ bản nhanh chóng.
+
+### 2.3 Làm trung gian giữa client và backend
+
+Proxy ngược (Reverse Proxy): Chuyển tiếp yêu cầu từ client đến backend
+hoặc Application Server để xử lý các tài nguyên động.
+• Cân bằng tải (Load Balancing): Phân phối yêu cầu đến nhiều server backend
+để tối ưu hiệu suất và đảm bảo tính sẵn sàng.
+
+### 2.4 Đảm bảo bảo mật
+
+- Chứng chỉ SSL/TLS: Mã hóa kết nối để bảo vệ dữ liệu trao đổi giữa client
+  và server.
+- Quản lý quyền truy cập: Thiết lập cơ chế xác thực và phân quyền để bảo vệ
+  tài nguyên.
+- Tường lửa ứng dụng web (WAF): Phòng ngừa các cuộc tấn công như SQL
+  Injection, Cross-Site Scripting (XSS), và DDoS
+
+### 2.5 Quản lý phiên làm việc (Session Management)
+
+- Lưu trữ thông tin phiên làm việc của người dùng, đảm bảo tính liên tục và
+  đồng bộ giữa các lần gửi yêu cầu.
+
+### 2.6 Tối ưu hóa hiệu suất
+
+- Caching: Lưu trữ các kết quả xử lý tạm thời để giảm thời gian phản hồi
+  trong các yêu cầu lặp lại.
+- Compression: Giảm kích thước dữ liệu trả về (bằng Gzip hoặc Brotli) để
+  tăng tốc độ tải trang.
+
+### 2.7 Ghi log và theo dõi hoạt động
+
+Ghi lại thông tin về các yêu cầu HTTP (địa chỉ IP, thời gian, trạng thái phản
+hồi) để hỗ trợ:
+o Phân tích hiệu suất.
+o Xác định lỗi.
+o Bảo trì hệ thống
+
+### 2.8 Hỗ trợ các tính năng nâng cao
+
+• Rewrite URL: Chuyển đổi các URL phức tạp thành các URL thân thiện với
+người dùng và công cụ tìm kiếm.
+• Redirect: Chuyển hướng yêu cầu từ một URL đến URL khác (ví dụ: từ
+HTTP sang HTTPS).
+• Virtual Hosting: Lưu trữ nhiều trang web trên cùng một máy chủ vật lý, sử
+dụng các tên miền khác nhau.
+
+## 3. Cách thức hoạt động của Web Server
+
+### 3.1 Thiết lập kết nối
+
+- Khi máy tính khách (client) muốn truy cập vào một trang
+  web, nó gửi yêu cầu tới địa chỉ IP của máy chủ (server) thông qua một giao thức
+  truyền tải siêu văn bản (HTTP). Quá trình này thường bắt đầu bằng việc thiết lập
+  kết nối TCP/IP giữa client và server
+
+### 3.2 Xử lý yêu cầu
+
+### 3.3 Tìm kiếm tài nguyên
+
+- Sau khi phân tích yêu cầu, web server sẽ tìm kiếm và
+  truy cập tài nguyên tương ứng. Điều này có thể bao gồm đọc tệp tin từ hệ thống tệp
+  của máy chủ hoặc tương tác với cơ sở dữ liệu để lấy thông tin
+
+### 3.4 Xây dựng response: Dựa trên yêu cầu và tài nguyên đã tìm kiếm, web server
+
+- sẽ xây dựng một response để trả về cho máy tính khách. Response này thường bao
+  gồm một mã trạng thái (status code) để chỉ ra thành công hay thất bại của yêu cầu,
+  các thông tin header như loại nội dung, kích thước tệp tin, và nội dung thực tế được
+  trả về.
+
+### 3.5 Trả về response: Cuối cùng, web server sẽ gửi response được xây dựng trở lại
+
+- cho máy tính khách qua mạng. Máy tính khách nhận response và hiển thị nội dung
+  tương ứng cho người dùng.
+  Quá trình này diễn ra liên tục và web server có thể xử lý đồng thời nhiều yêu cầu
+  từ các máy tính khách khác nhau\*\*\*\*
+
+## 4. Các Web Server phổ biến
+
+- 4.1 Apache HTTP Server:
+- 4.2 Nginx:
+- 4.3 Microsoft Internet Information Services (IIS):
+- Ngoài ra, còn nhiều web server khác như LiteSpeed, Cherokee, IBM HTTP Server,
+  thậm chí cả các web server tích hợp trong các framework như Flask và Express.js.
+
+## WEB APPLICATION
+
+### 2. Vai trò Web Application
+
+#### 2.3 Tích hợp và xử lý dữ liệu:
+
+- Kết nối với cơ sở dữ liệu để lưu trữ, truy xuất, và quản lý dữ liệu.
+- Xử lý logic nghiệp vụ để đáp ứng nhu cầu sử dụng cụ thể của người dùng.
+
+#### 2.4 Đa nền tảng:
+
+- Hoạt động trên mọi thiết bị có trình duyệt (PC, smartphone, tablet) mà không phụ
+  thuộc vào hệ điều hành.
+
+#### 3.3 Xử lý tại Web Application (Backend):
+
+Web Application xử lý logic nghiệp vụ, thực hiện các tác vụ như:
+o Lấy dữ liệu từ cơ sở dữ liệu.
+o Tính toán hoặc xử lý yêu cầu nghiệp vụ.
+o Tạo nội dung động (Dynamic Content)
+
+#### 3.4 Trả phản hồi về trình duyệt:
+
+• Web Application gửi kết quả đến Web Server, và Web Server chuyển phản hồi này đến trình duyệt.
+• Trình duyệt hiển thị nội dung cho người dùng
+
+### 4.4 Dựa trên công nghệ backend
+
+• Full-stack Web Applications:
+o Sử dụng cả backend và frontend frameworks (ví dụ: MERN stack -
+MongoDB, Express, React, Node.js).
+• Headless Web Applications:
+o Backend chỉ cung cấp API, frontend xử lý hiển thị độc lập.
+
+### Mối quan hệ giữa Web Server và Web Application
+
 ## cài đặt ứng dụng web wordpress
 
 ![image](https://hackmd.io/_uploads/SyVAFzzuR.png)
