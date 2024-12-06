@@ -773,10 +773,13 @@ SecAuditEngine chấp nhận 3 giá trị sau:
 
 - https://hackmd.io/@LsyWeJqxSYS5CYf0Hlbawg/SJUn8ixJi
 - https://123host.vn/tailieu/kb/vps/huong-dan-cai-dat-modsecurity-len-nginx-tren-ubuntu-20-04.html
--
+- https://www.youtube.com/watch?v=kBE0glft6LY
+- https://www.youtube.com/watch?v=478ku0_2LvI
 
 ## Tham khảo
 
 - https://viblo.asia/p/tich-hop-mod-security-cho-web-application-server-de-chong-lai-sql-injection-va-tan-cong-xss-bJzKmx6X59N
 - https://whitehat.vn/threads/huong-dan-cai-dat-mod_security-cho-server-apache.34/
 - https://thaibinh.gov.vn/attt/tin-tuc-su-kien/tuong-lua-ung-dung-web-modsecurity-va-cai-dat-de-bao-ve-webs.html
+- https://www.youtube.com/watch?v=2rIRcI_bYgY
+- https://www.youtube.com/watch?v=ZRor7xTgy04
