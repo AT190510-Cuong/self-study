@@ -278,6 +278,12 @@ try {
 
 ## cài đặt webserver chạy nhiều trang web
 
+### Virtual host
+
+- `Name-Based Virtual Hosting`: Phương pháp này chỉ dựa vào HTTP Host headerđể phân biệt giữa các trang web. Đây là phương pháp phổ biến và linh hoạt nhất vì không yêu cầu nhiều địa chỉ IP. Phương pháp này tiết kiệm chi phí, dễ thiết lập và hỗ trợ hầu hết các máy chủ web hiện đại. Tuy nhiên, phương pháp này yêu cầu máy chủ web phải hỗ trợ dựa trên tên virtual hostingvà có thể có những hạn chế với một số giao thức như SSL/TLS.
+- `IP-Based Virtual Hosting`: Loại lưu trữ này gán một địa chỉ IP duy nhất cho mỗi trang web được lưu trữ trên máy chủ. Máy chủ xác định trang web nào sẽ phục vụ dựa trên địa chỉ IP mà yêu cầu được gửi đến. Nó không dựa vào Host header, có thể được sử dụng với bất kỳ giao thức nào và cung cấp khả năng cô lập tốt hơn giữa các trang web. Tuy nhiên, nó yêu cầu nhiều địa chỉ IP, có thể tốn kém và ít khả năng mở rộng hơn.
+- `Port-Based Virtual Hosting`: Các trang web khác nhau được liên kết với các cổng khác nhau trên cùng một địa chỉ IP. Ví dụ, một trang web có thể truy cập được trên cổng 80, trong khi một trang web khác trên cổng 8080. Port-based virtual hostingcó thể được sử dụng khi địa chỉ IP bị giới hạn, nhưng không phổ biến hoặc thân thiện với người dùng như name-based virtual hostingvà có thể yêu cầu người dùng chỉ định số cổng trong URL.
+
 ### apache
 
 ![image](https://hackmd.io/_uploads/By_mnwMuR.png)
